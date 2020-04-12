@@ -29,6 +29,6 @@ resource "null_resource" "test01" {
     value = "${timestamp()}"
   }
   provisioner "local-exec" {
-    command = "watch free -m"
+    command = "free -m"
   }
 }
