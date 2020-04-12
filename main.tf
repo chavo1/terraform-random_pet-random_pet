@@ -23,3 +23,12 @@ resource "null_resource" "env2" {
     command = "ls -la"
   }
 }
+
+resource "null_resource" "test01" {
+  triggers = {
+    value = "${timestamp()}"
+  }
+  provisioner "local-exec" {
+    command = "watch free -m"
+  }
+}
