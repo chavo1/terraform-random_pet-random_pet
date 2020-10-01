@@ -21,14 +21,6 @@ resource "null_resource" "env1" {
 resource "null_resource" "env2" {
   provisioner "local-exec" {
     command = "ls -la"
-  }
-}
-
-resource "null_resource" "test01" {
-  triggers = {
-    value = "${timestamp()}"
-  }
-  provisioner "local-exec" {
-    command = "free -m"
+    }
   }
 }
